@@ -1,13 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HoleScript : MonoBehaviour
 {
     public Player player;
+    public GameObject changeLevel;
+    public GameObject victory;
+
+    public bool hole;
+
+    private void Start()
+    {
+        changeLevel.SetActive(false);
+        victory.SetActive(false);
+
+    }
 
 
-    public bool hole; 
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,12 +33,24 @@ public class HoleScript : MonoBehaviour
             {
                 if (player.actualCheckpoint == 4)
                 {
-                    Debug.Log("Victory"); 
+                    Debug.Log("Victory"); victory.SetActive(true);
                 }
 
                 return;
             }
-            player.transform.position = player.checkpoints[player.actualCheckpoint].position;
+            StartCoroutine(ChangeLevel(2.35f));
         }
     }
+
+    IEnumerator ChangeLevel(float t)
+    {
+        changeLevel.SetActive(true);
+        yield return new WaitForSeconds(t);
+        changeLevel.SetActive(false);
+        player.transform.position = player.checkpoints[player.actualCheckpoint].position;
+    }
+
+
+
+
 }
