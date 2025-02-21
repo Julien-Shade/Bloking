@@ -20,4 +20,6 @@ public class GetOut : MonoBehaviour
             rb.AddForce(new(forceX, forceY, forceZ));
         }
     }
+
+  
 }

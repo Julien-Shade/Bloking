@@ -61,12 +61,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(moveInput.x, default, moveInput.y) * speed * Time.deltaTime);
-
+        
 
         if (transform.position.y < 0)
         {
             transform.position = checkpoints[actualCheckpoint].position;
         }
+    }
+
+    void FixedUpdate()
+    {
+        transform.Translate(new Vector3(moveInput.x, default, moveInput.y) * speed * Time.deltaTime);
     }
 }
