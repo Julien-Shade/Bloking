@@ -12,12 +12,29 @@ public class GetOut : MonoBehaviour
     [SerializeField]
     private float forceZ;
 
+    private Vector3 direction;
+
+    [SerializeField]
+    private float forceMagnitude;
+
+    private void Start()
+    {
+        
+        Debug.Log("direcction = " + direction);
+    }
+
+    private void Update()
+    {
+        direction = transform.forward;
+    }
+
     public void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Ball"))
         {
             Rigidbody rb = other.GetComponent<Rigidbody>();
-            rb.AddForce(new(forceX, forceY, forceZ));
+            //rb.AddForce(new(forceX, forceY, forceZ));
+            rb.AddForce(direction * forceMagnitude);
         }
     }
 

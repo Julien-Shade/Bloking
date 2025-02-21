@@ -31,7 +31,7 @@ public class HoleScript : MonoBehaviour
             player.actualCheckpoint++;
             if (player.actualCheckpoint >= 3)
             {
-                if (player.actualCheckpoint == 4)
+                if (player.actualCheckpoint == 6)
                 {
                     Debug.Log("Victory"); victory.SetActive(true);
                 }

@@ -45,4 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  changeLevel: {fileID: 0}
+  victory: {fileID: 5334136962699166896}
   hole: 0
