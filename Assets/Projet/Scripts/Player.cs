@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     public Transform checkPoint;
     public Transform checkPoint2;
     public Transform checkPoint3;
+    public Transform checkPoint4;
+    public Transform checkPoint5;
 
     
     public int actualCheckpoint;
@@ -53,6 +55,8 @@ public class Player : MonoBehaviour
         checkpoints[0] = checkPoint;
         checkpoints[1] = checkPoint2;
         checkpoints[2] = checkPoint3;
+        checkpoints[3] = checkPoint4;
+        checkpoints[4] = checkPoint5;
 
         //actualCheckpoint[0] = checkPoint;
     }

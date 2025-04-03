@@ -15,7 +15,6 @@ public class HoleScript : MonoBehaviour
     {
         changeLevel.SetActive(false);
         victory.SetActive(false);
-
     }
 
 
@@ -34,8 +33,9 @@ public class HoleScript : MonoBehaviour
                 if (player.actualCheckpoint == 6)
                 {
                     Debug.Log("Victory"); victory.SetActive(true);
+                    return;
                 }
-
+                StartCoroutine(ChangeLevel(2.35f));
                 return;
             }
             StartCoroutine(ChangeLevel(2.35f));
