@@ -15,10 +15,9 @@ public class Trigger : MonoBehaviour
             //afficher écran ?
             isIn = true;
         }
-
-
     }
 
+    
     private void OnTriggerExit(Collider other)
     {
 
