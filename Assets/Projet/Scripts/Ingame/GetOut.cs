@@ -20,7 +20,7 @@ public class GetOut : MonoBehaviour
     private void Start()
     {
         
-        Debug.Log("direcction = " + direction);
+        //Debug.Log("direcction = " + direction);
     }
 
     private void Update()

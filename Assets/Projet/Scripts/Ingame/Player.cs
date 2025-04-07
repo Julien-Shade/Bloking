@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     {
         transform.position = checkPoint.position;
 
-        checkpoints = new Transform[3];
+        checkpoints = new Transform[5];
 
         checkpoints[0] = checkPoint;
         checkpoints[1] = checkPoint2;
