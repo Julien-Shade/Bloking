@@ -28,17 +28,29 @@ public class HoleScript : MonoBehaviour
             hole = true;
             Debug.Log("Hole in One !!!");
             player.actualCheckpoint++;
-            if (player.actualCheckpoint >= 3)
+
+
+            if (player.actualCheckpoint == 1)
             {
-                if (player.actualCheckpoint == 6)
-                {
-                    Debug.Log("Victory"); victory.SetActive(true);
-                    return;
-                }
                 StartCoroutine(ChangeLevel(2.35f));
-                return;
             }
-            StartCoroutine(ChangeLevel(2.35f));
+
+            if (player.actualCheckpoint == 2)
+            {
+                StartCoroutine(ChangeLevel(2.35f));
+            }
+
+            if (player.actualCheckpoint == 4)
+            {
+                StartCoroutine(ChangeLevel(2.35f));
+            }
+
+            if(player.actualCheckpoint == 5)
+            {
+                StartCoroutine(ChangeLevel(2.35f));
+            }
+            
+            
         }
     }
 

@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager Instance;
 
-    public GameObject player;
+    public GameObject playerIRL;
+    public GameObject playerIG;
 
-    public GameObject[] objectScene;
+    bool _ = true;
 
     private void Awake()
     {
@@ -31,60 +30,44 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
-
-
-        //desactiver le Player (ingame ingame)
-        Scene scene = SceneManager.GetSceneByBuildIndex(1);
-
-
-        //player.SetActive(false);
-
-        objectScene = scene.GetRootGameObjects();
-
-        
-
-            //player.SetActive(false);
-
-
-        AnalyserScene(scene);
-
-
-            //SceneManager.MergeScenes(SceneManager.GetSceneByBuildIndex(1),SceneManager.GetActiveScene());
+        playerIG.SetActive(false);
     }
 
        
 
-
-
-
-    
-
-
-
-    void AnalyserScene(Scene scene)
+    // Update is called once per frame
+    void Update()
     {
-        // Obtenir tous les objets racine
-        GameObject[] rootObjects = scene.GetRootGameObjects();
-
-        foreach (GameObject rootObject in rootObjects)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log($"Objet racine trouvé : {rootObject.name}");
-
-            // Parcourir tous les enfants récursivement
-            foreach (Transform child in rootObject.GetComponentsInChildren<Transform>())
-            {
-                Debug.Log($"  -> Enfant : {child.name}");
-            }
+            //SwitchPlayer();
         }
     }
 
 
-    // Update is called once per frame
-    void Update()
+
+    /// <summary>
+    /// Switch entre player IR et IG
+    /// </summary>
+    public void SwitchPlayer()
     {
+
+
+        if (!_)
+        {
+            playerIG.SetActive(false);
+            playerIRL.SetActive(true);
+            Debug.Log("test !_");
+        }
+
+        if (_)
+        {
+            playerIG.SetActive(true);
+            playerIRL.SetActive(false);
+            Debug.Log("test _");
+        }
+
+        _ = !_;
 
     }
 

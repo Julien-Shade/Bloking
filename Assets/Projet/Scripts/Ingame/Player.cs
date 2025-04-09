@@ -71,6 +71,13 @@ public class Player : MonoBehaviour
         {
             transform.position = checkpoints[actualCheckpoint].position;
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.Instance.SwitchPlayer();
+        }
+
     }
 
     void FixedUpdate()
