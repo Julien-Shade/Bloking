@@ -8,8 +8,11 @@ public class HoleScript : MonoBehaviour
     public Player player;
     public GameObject changeLevel;
     public GameObject victory;
+    public TexteIteration texteIteration;
 
     public bool hole;
+
+    bool _oneTime = false;
 
     private void Start()
     {
@@ -27,6 +30,9 @@ public class HoleScript : MonoBehaviour
         {
             hole = true;
             Debug.Log("Hole in One !!!");
+
+
+
             player.actualCheckpoint++;
 
 
@@ -40,26 +46,45 @@ public class HoleScript : MonoBehaviour
                 StartCoroutine(ChangeLevel(2.35f));
             }
 
+            if (player.actualCheckpoint == 3)
+            {
+                OneTime();
+            }
+            if (player.actualCheckpoint == 3)
+            {
+                StartCoroutine(ChangeLevel(2.35f));
+            }
+
             if (player.actualCheckpoint == 4)
             {
                 StartCoroutine(ChangeLevel(2.35f));
             }
 
-            if(player.actualCheckpoint == 5)
-            {
-                StartCoroutine(ChangeLevel(2.35f));
-            }
-            
-            
+
         }
+    }
+
+
+    private void OneTime()
+    {
+        if (_oneTime) return;
+        player.actualCheckpoint--;
+        _oneTime = true;
     }
 
     IEnumerator ChangeLevel(float t)
     {
         changeLevel.SetActive(true);
+
         yield return new WaitForSeconds(t);
-        changeLevel.SetActive(false);
         player.transform.position = player.checkpoints[player.actualCheckpoint].position;
+        changeLevel.SetActive(false);
+        GameManager.Instance.SwitchPlayer();
+        texteIteration.ChangeText();
+
+
+
+
     }
 
 
