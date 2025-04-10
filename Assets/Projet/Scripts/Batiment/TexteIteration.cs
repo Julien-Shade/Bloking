@@ -18,8 +18,8 @@ public class TexteIteration : MonoBehaviour
 
     string ite1 = "Pas mal pour un débutant, on comprend asser rapidement le concept de mettre la balle dans le trou pour reussir le défis.";
     string ite2 = "Un bon début d'itération, après avoir appris au joueur à déplacer la balle dans le trou, il faut ensuite amener la balle jusqu'au trou à travers les obstacles.";
-    string ite3 = "Le 3ème défis est interessant : il faut amemer 2 balle dans le trou au lieu d'un. C'est très bien comme itération.";
-    string ite4 = "Mmm... Il introduit la mécanique de la fleche qui fait pousser la balle dans la direction indiquer cependant je pense qu'il faudrais le faire de maniere different meme si c'est amusant à voir.";
+    string ite3 = "Le 3ème défis est interessant : il faut amemer 2 balle dans le trou au lieu d'un. Et il y a une nouvelle mécanique la fleche qui pousse. C'est très bien comme itération.";
+    string ite4 = "Mmm... Il a introduit la mécanique de la fleche cependant je pense qu'il faudrais le faire de maniere different meme si c'est amusant à voir.";
     string ite5 = "Il m'envoit le niveau 5 parcontre il est vide ? Il m'avait dit que c'était le dernier et qu'il avait pris en compte mon derniers feedback... Il s'est tromper de version ?";
 
 

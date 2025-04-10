@@ -8,6 +8,7 @@ public class Trigger : MonoBehaviour
     public bool isIn;
 
     public GameObject canvaPC;
+    public GameObject canvaPC_1;
 
 
 
@@ -16,6 +17,7 @@ public class Trigger : MonoBehaviour
     private void Start()
     {
         canvaPC.SetActive(false);
+        canvaPC_1.SetActive(false);
     }
 
 
@@ -28,6 +30,7 @@ public class Trigger : MonoBehaviour
             {
                 GameManager.Instance.SwitchPlayer();
                 canvaPC.SetActive(false);
+                canvaPC_1.SetActive(false);
             }
         }
     }
@@ -41,6 +44,7 @@ public class Trigger : MonoBehaviour
         {
             //afficher écran ?
             canvaPC.SetActive(true);
+            canvaPC_1.SetActive(true);
             isIn = true;
         }
     }
@@ -53,6 +57,7 @@ public class Trigger : MonoBehaviour
         {
             //désafficher "écran"
             canvaPC.SetActive(false);
+            canvaPC_1.SetActive(false);
             isIn = false;
         }
 

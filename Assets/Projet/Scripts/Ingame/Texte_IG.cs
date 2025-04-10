@@ -15,7 +15,15 @@ public class Texte_IG : MonoBehaviour
     }
 
 
+    private void OnEnable()
+    {
+        texte_Esc.SetActive(true);
+    }
 
+    private void OnDisable()
+    {
+        texte_Esc.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
